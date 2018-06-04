@@ -1,8 +1,14 @@
 language: go
 go:
- - 1.10.1
- - release
- - tip
+  - 1.10.1
+  - release
+  - tip
+
+before_install:
+  - go get -t -v ./...
 
 script:
- - go test -v ./util
+  - go test -v -race -coverprofile=coverage.txt -covermode=atomic ./util
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
