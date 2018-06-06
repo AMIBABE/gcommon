@@ -22,7 +22,7 @@ const (
 	// InsufficientPartnerPermissions 合作伙伴权限不足, 应用没有权限调用增值权限的接口
 	InsufficientPartnerPermissions = 13
 
-	// MissingMethod 缺少方法名参数d> , 传入的参数加入method字段
+	// MissingMethod 缺少方法名参数, 传入的参数加入method字段
 	MissingMethod = 21
 
 	// InvalidMethod 不存在的方法名, 传入的method字段必需是你所调用的API的名称，并且该API是确实存在的
