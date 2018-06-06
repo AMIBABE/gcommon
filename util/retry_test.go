@@ -23,6 +23,18 @@ func TestRetry(t *testing.T) {
 		var i = 3
 		Retry(3, time.Second, func() error {
 			i--
+			return RetryStop{errors.New("err")}
+		})
+
+		if i != 2 {
+			t.Error("在主动停止重试后并未停止")
+		}
+	}
+
+	{
+		var i = 3
+		Retry(3, time.Second, func() error {
+			i--
 			return nil
 		})
 
