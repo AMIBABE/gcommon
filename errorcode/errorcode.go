@@ -81,6 +81,7 @@ const (
 var ErrorMessageMap map[int]string
 
 func init() {
+	ErrorMessageMap = make(map[int]string)
 	ErrorMessageMap[UploadFail] = "图片上传失败, 将传入的图片格式改为正确的格式、适当的大小的图片放进消息体里面传输过来，如果传输仍然失败需要减小图片大小或者增加网络带宽进行尝试"
 	ErrorMessageMap[AppCallLimited] = "应用调用次数超限, 调整程序合理调用API，等限频时间过了再调用，淘客的调用频率是系统按照上个月交易额自动修改的，修改后的频率会在官方论坛首页以公告形式通知，开发者可自行查看"
 	ErrorMessageMap[HTTPActionNotAllowed] = "HTTP方法被禁止, 请用大写的POST或GET，如果有图片等信息传入则一定要用POST才可以"
